@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './styles.css';
-
+import { faComment, faPerson, faHandPaper } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function SharePostPage() {
     const [posts, setPosts] = useState([]);
@@ -13,17 +14,14 @@ function SharePostPage() {
         }
     };
 
-    const handleComment = (index,comment) => {
-        const updatedPosts = [...posts];
-        updatedPosts[index].comments.push(comment);
-        setPosts(updatedPosts);
+    const handleAddComment = (index,comment) => {
+        if(comment){
+            const updatedPosts = [...posts];
+            updatedPosts[index].comments.push(comment);
+            setPosts(updatedPosts);
+        }
     };
 
-    const handleLike = (index) => {
-        const updatedPosts = [...posts];
-        updatedPosts[index].likes++;
-        setPosts(updatedPosts);
-    }
 
     const getTimeAgo = (timestamp) => {
         const now = new Date();
@@ -59,24 +57,21 @@ function SharePostPage() {
             
             {posts.map((post,index) => (
                 <div key={index} className='post'>
-                    <p>{post.content}</p>
-                    <p className='time-ago'>{getTimeAgo(post.timestamp)}</p>
-                    <button onClick={() => handleLike(index)}>Like ({post.likes})</button>
-                    <input
-                        type='text'
-                        placeholder='comment'
-                        onKeyDown={(e) =>{
-                            if(e.key === 'Enter'){
-                                handleComment(index, e.target.value);
-                                e.target.value = '';
-                            }
-                        }}
-                    />
-                    <ul>
-                        {post.comments.map((comment, commentIndex) => (
-                            <li key = {commentIndex}>{comment}</li>
-                        ))}
-                    </ul>
+                    <span className='time-ago'>{getTimeAgo(post.timestamp)}</span>
+                    <div className='hand-icon'>
+                    <FontAwesomeIcon icon={faHandPaper} /> 
+                    <p className='post-content'>{post.content}</p>
+                    </div>
+                  
+                    <div className='comment-section'>
+                        <div className='comment-icon'>
+                        <div className='comment-icon' onClick={() => handleAddComment(index, prompt('Add a comment'))} >
+                            <FontAwesomeIcon icon={faComment} />
+                        </div>
+                        </div>
+                        <p className='comment-count'>{post.comments.length} Comments</p>
+                    </div>
+                   
                 </div>
             ))}
         </div>

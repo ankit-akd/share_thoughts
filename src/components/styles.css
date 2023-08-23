@@ -127,3 +127,43 @@
     background: #4A96FF; 
     
 }
+
+.post{
+    width: 700px;
+    height: 250px;
+    flex-shrink: 0; 
+    border-radius: 2px;
+    background: #191920; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.post-content{
+    width: 551px;
+    height: 75px;
+    flex-shrink: 0; 
+    color: #7F8084;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    display: flex;
+    flex-direction: column;
+}
+
+.time-ago{
+    float: left;
+}
+
+.hand-icon {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+}
+.comment-section {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+}
