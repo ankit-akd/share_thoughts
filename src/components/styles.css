@@ -1,0 +1,129 @@
+.login-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: red;
+}
+
+.login-box{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.label{
+    font-weight: bold;
+}
+
+.email-input{
+    position: relative;
+}
+
+.forgot-password{
+    margin-left: 5px;
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.password-input{
+    position: relative;
+    
+}
+.toggle-password{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password i {
+    font-size: 20px;
+}
+
+.login-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+.post-page{
+    display:inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250vh;
+    text-align: center;
+    width: 1440;
+    height: 900;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(1, 26, 7, 0.2);
+}
+
+.text-above-post-box{
+    color: #7F8084;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    width: 580px;
+}
+
+/* .post-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 223px;
+    width: 700px;
+    top: 203px;
+    left: 370px; 
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(1, 26, 7, 0.2);
+  } */
+
+.post-input{
+    width: 700px;
+    height: 223px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 2px solid #35373B;
+    background: #27292D; 
+    margin-bottom: 20px;
+}
+
+.custom-input{
+    width: 660px;
+    height: 78px;
+    flex-shrink: 0; 
+    border-radius: 8px;
+    background: #191920; 
+}
+
+.btn-primary{
+    width: 111px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #4A96FF; 
+    
+}
