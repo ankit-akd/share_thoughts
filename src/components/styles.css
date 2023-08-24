@@ -7,54 +7,62 @@
 }
 
 .login-box{
-    width: 300px;
     padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    align-items: center;
+    border: 1px solid #ccc;    
+    width: 463px;
+    height: 420px; 
+    border-radius: 8px;
+    background: #27292D; 
 }
 
 .form-group{
-    margin-bottom: 15px;
-    width: 100%;
+    width: 415px;
+    height: 70px; 
 }
 
-.label{
+/* .label{
     font-weight: bold;
-}
+} */
 
 .email-input{
     position: relative;
+    display: flex;
 }
 
-.forgot-password{
-    margin-left: 5px;
+.form-group label{
+    color: #C5C7CA;
+    font-family: Inter;
     font-size: 14px;
-    color: #007bff;
-    cursor: pointer;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    display: flex;
+}
+
+
+.forgot-password{
+    color: #C5C7CA;
+    text-align: right;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    display: flex;
+  justify-content: flex-end;
 }
 
 .password-input{
     position: relative;
+    /* display: flex; */
     
 }
-.toggle-password{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
 
-.toggle-password i {
-    font-size: 20px;
-}
 
 .login-button {
     display: block;
-    width: 100%;
+    width: 415px;
+    height: 43px; 
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -62,6 +70,11 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 15px;
+}
+
+.not-register{
+    margin-top:10px;
+    float: left; 
 }
 
 
@@ -86,6 +99,7 @@
     font-weight: 400;
     line-height: 150%;
     width: 580px;
+    text-align: left;
 }
 
 /* .post-input {
@@ -130,7 +144,7 @@
 
 .post{
     width: 700px;
-    height: 250px;
+    height: 150px;
     flex-shrink: 0; 
     border-radius: 2px;
     background: #191920; 
@@ -140,8 +154,8 @@
 }
 
 .post-content{
-    width: 551px;
-    height: 75px;
+    /* width: 551px;
+    height: 75px; */
     flex-shrink: 0; 
     color: #7F8084;
     font-family: Inter;
@@ -151,6 +165,7 @@
     line-height: 150%;
     display: flex;
     flex-direction: column;
+    width:max-content;
 }
 
 .time-ago{
@@ -179,50 +194,22 @@
     align-items: center;
 }
 
-.signup-box{
-    
-}
 
-.email-input-box{
-    width: 415px;
-    height: 70px;
-    border-radius: 4px;
-    border: 1.5px solid #35373B;    
-}
 
 .email-input input{
     width: 415px;
-    height: 40px;    
+    height: 40px;
+    position: relative;
+    display: flex;    
 }
 
-.email-input label{
-    color: #C5C7CA;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;    
-}
 
-.username-input-box{
-    width: 415px;
-    height: 70px;
-    border-radius: 4px;
-    border: 1.5px solid #35373B; 
-     
-}
 .username-input input{
     width: 415px;
     height: 40px;
 }
 
-.password-input-box{
-    width: 415px;
-    height: 70px;
-    border-radius: 4px;
-    border: 1.5px solid #35373B; 
-    justify-content: space-between;
-}
+
 
 .password-input label{
     color: #C5C7CA;

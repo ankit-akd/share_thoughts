@@ -31,7 +31,7 @@ function SignUpPage() {
       <div className='signup-box'>
         <h1>Sign Up</h1>
         <h1>Create an Account to continue</h1>
-        <div className='email-input-box'>
+        <div className='form-group'>
           <label htmlFor='email'>Email</label>
           <div className='email-input'>
           <input
@@ -43,7 +43,7 @@ function SignUpPage() {
           />
           </div>
         </div>
-        <div className='username-input-box'>
+        <div className='form-group'>
           <label htmlFor='username'>Username</label>
           <div className='username-input'>
           <input
@@ -55,7 +55,7 @@ function SignUpPage() {
           />
           </div>
         </div>
-        <div className='password-input-box'>
+        <div className='form-group'>
           <label htmlFor='password'>Password</label>
           <div className='password-input'>
             <span>

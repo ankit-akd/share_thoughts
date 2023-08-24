@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './styles.css';
-import { faComment, faPerson, faHandPaper } from '@fortawesome/free-solid-svg-icons';
+import { faComment, faPerson, faHandPaper, faSmile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 function SharePostPage() {
     const [posts, setPosts] = useState([]);
@@ -41,7 +42,9 @@ function SharePostPage() {
         <div className='post-page'>
             <div className="text-above-post-box">
             <h2>Hello</h2>
-            <h2>How are you doing today?  Would you like to share something with the community? </h2>
+            <h2>How are you doing today?  Would you like to share something with the community? 
+            <FontAwesomeIcon icon={faSmile} />
+            </h2>
             </div>
             <div className='post-input'>
                 <h1 style={{textAlign:'left'}}>Create Post</h1>

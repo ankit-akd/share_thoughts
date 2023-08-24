@@ -1,18 +1,29 @@
 import React,  {useState} from 'react';
 import './styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import {useNavigate} from 'react-router-dom';
 
 const LoginPage = () => {
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
+    const history = useNavigate();
+
     const handleSubmit = (event) =>{
         event.preventDefault();
         console.log('Email',emailAddress);
         console.log('Password',password);
     };
-    const togglePasswordVisibility = () =>{
+    const handlePasswordToggle= () =>{
         setShowPassword(!showPassword);
+    }
+
+    const handleLogin = () =>{
+        if(emailAddress && password){
+        history('/dashboard');
+        }
     }
    
 
@@ -36,13 +47,19 @@ const LoginPage = () => {
                     </div>    
                 </div>
                 <div className='form-group'>
-                    <label htmlFor='password'>Password
+                    <label htmlFor='password'>Password</label>
                         <span className='forgot-password'>Forgot Password?</span>
-                    </label>
+                    
                     <div className='password-input'>
+                    <span>
+                        <FontAwesomeIcon
+                        icon={showPassword ? faEyeSlash : faEye}
+                        className='eye-icon'
+                        onClick={handlePasswordToggle}
+                        />
+                    </span>
                      <input
-                        type={showPassword ? "text" : "password"}
-                        
+                        type={showPassword ? "text" : "password"}                        
                         id="password"
                         placeholder='Enter your Password'
                         value={password}
@@ -50,17 +67,17 @@ const LoginPage = () => {
                      /> 
                     </div>  
                 </div>
-                <span className = "toggle-password"
+                {/* <span className = "toggle-password"
                     onClick={()=>togglePasswordVisibility()}
                 >
                     <i className={showPassword ? 'fas fa-eye' : 'fas fa-eye-slash'}></i>
-                </span>
+                </span> */}
                 
-                <button type="submit" className='login-button'>
+                <button type="submit" className='login-button' onClick={handleLogin}>
                     Login Now
                 </button>
                 <span className='not-register'>Not registered yet? 
-                    <a href="#">Register?</a>
+                    <a href="/signup">Register?</a>
                 </span>
             </form>
           </div>
