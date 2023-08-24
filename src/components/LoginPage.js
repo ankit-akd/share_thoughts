@@ -3,19 +3,17 @@ import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {useNavigate} from 'react-router-dom';
+import { closeForm } from './CloseForm';
 
 const LoginPage = () => {
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [showLoginForm, setShowLoginForm] = useState(true);
 
     const history = useNavigate();
 
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        console.log('Email',emailAddress);
-        console.log('Password',password);
-    };
+ 
     const handlePasswordToggle= () =>{
         setShowPassword(!showPassword);
     }
@@ -25,14 +23,22 @@ const LoginPage = () => {
         history('/dashboard');
         }
     }
-   
+    const handleCloseLoginForm = () => {
+        setShowLoginForm(false);
+    }
+    
 
     return(
         <div className= "login container">
-          <div className='login-box'>  
+         {showLoginForm && (   
+            
+          <div className='login-box'> 
+          <button className='close-button' onClick={() => closeForm(setShowLoginForm)}>
+            &#x2716;
+          </button> 
             <h1>Welcome Back</h1>
             <h2>Log into your account</h2>
-            <form onSubmit = {handleSubmit}>
+            
                 <div className='form-group'>
                     <label htmlFor='email'>Email or Username</label>
                     <div className="email-input">
@@ -67,20 +73,16 @@ const LoginPage = () => {
                      /> 
                     </div>  
                 </div>
-                {/* <span className = "toggle-password"
-                    onClick={()=>togglePasswordVisibility()}
-                >
-                    <i className={showPassword ? 'fas fa-eye' : 'fas fa-eye-slash'}></i>
-                </span> */}
-                
+              
                 <button type="submit" className='login-button' onClick={handleLogin}>
                     Login Now
                 </button>
                 <span className='not-register'>Not registered yet? 
                     <a href="/signup">Register?</a>
                 </span>
-            </form>
+                       
           </div>
+        )}        
         </div>
     );
 };

@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { closeForm } from './CloseForm';
 
 function SignUpPage() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showSignupForm, setShowSignupForm] = useState(true);
 
   const history = useNavigate();
 
@@ -15,11 +17,6 @@ function SignUpPage() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Email',email);
-    console.log('Password',password);
-  };
 
   const handleContinue = () => {
     history('/dashboard');
@@ -28,7 +25,11 @@ function SignUpPage() {
 
   return (
     <div className='signup-page'>
+     {showSignupForm && (
       <div className='signup-box'>
+        <button className='close-button' onClick={() => closeForm(setShowSignupForm)}>
+            &#x2716;
+        </button>
         <h1>Sign Up</h1>
         <h1>Create an Account to continue</h1>
         <div className='form-group'>
@@ -83,6 +84,7 @@ function SignUpPage() {
                 </a></span>
         </div>
       </div>
+    )}
     </div>
   );
 }

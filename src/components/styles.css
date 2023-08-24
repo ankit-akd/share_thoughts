@@ -243,3 +243,7 @@ line-height: normal;
     padding: 10px;
     float: left;
 }
+
+.close-button{
+    float: right;
+}
